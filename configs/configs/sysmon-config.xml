@@ -1,0 +1,15 @@
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+
+    <!-- Process Creation -->
+    <ProcessCreate onmatch="include">
+      <Image condition="contains">cmd.exe</Image>
+      <Image condition="contains">powershell.exe</Image>
+      <Image condition="contains">resume.pdf.exe</Image>
+    </ProcessCreate>
+
+    <!-- Network Connections -->
+    <NetworkConnect onmatch="include" />
+
+  </EventFiltering>
+</Sysmon>

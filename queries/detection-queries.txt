@@ -1,4 +1,17 @@
+# Detect process creation events (Sysmon Event ID 1)
+# Used to identify execution of suspicious files like malware or payloads
 index=main EventCode=1
+
+
+# Detect execution of malicious payload (resume.pdf.exe)
+# Helps identify if attacker executed downloaded file
 index=main "resume.pdf.exe"
-index=main process_exec="cmd.exe"
-index=main 192.168.56.106 DestinationPort=3389
+
+# Detect command shell execution (cmd.exe)
+# Often used by malware for post-exploitation activity
+index=main "cmd.exe"
+
+
+# Detect RDP activity on port 3389
+# Helps identify remote access attempts or brute force attacks
+index=main "192.168.56.106" 3389

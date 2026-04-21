@@ -53,8 +53,7 @@ Simulate a real-world cyber attack by exploiting RDP and executing a malicious p
   - net user
   - net localgroup
   - ipconfig
-
----
+-
 
 ## Log Analysis (Splunk + Sysmon)
 
@@ -72,10 +71,10 @@ Resume.pdf.exe → cmd.exe → system commands (net user, ipconfig)
 ---
 
 ## Detection Queries
-- index=main EventCode=1 Image="*Resume.pdf.exe*"
-- index=main EventCode=1 ParentImage="*Resume.pdf.exe*"
-- index=main EventCode=1 CommandLine="*net user*"
-- index=main EventCode=3 dest_port=3389
+- index=main EventCode=1
+- index=main "Resume.pdf.exe"
+- index=main process_exec="cmd.exe"
+- index=main 192.168.56.106 DestinationPort=3389
 
 ---
 

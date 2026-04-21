@@ -1,4 +1,4 @@
-- index=main EventCode=1
-- index=main "Resume.pdf.exe"
-- index=main process_exec="cmd.exe"
-- index=main 192.168.56.106 DestinationPort=3389
+index=main EventCode=1
+index=main "resume.pdf.exe"
+index=main process_exec="cmd.exe"
+index=main 192.168.56.106 DestinationPort=3389

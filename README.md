@@ -72,7 +72,7 @@ Resume.pdf.exe → cmd.exe → system commands (net user, ipconfig)
 
 ## Detection Queries
 - index=main EventCode=1
-- index=main "Resume.pdf.exe"
+- index=main "resume.pdf.exe"
 - index=main process_exec="cmd.exe"
 - index=main 192.168.56.106 DestinationPort=3389
 
